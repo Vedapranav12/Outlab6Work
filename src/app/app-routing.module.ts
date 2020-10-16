@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { FormComponent } from './form/form.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  // { path: 'detail/:id', component: HeaderComponent },
+  { path: '', redirectTo: '/contact', pathMatch: 'full' },
+  { path: 'form', component: FormComponent },
+  { path: 'contact', component: ContactPageComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

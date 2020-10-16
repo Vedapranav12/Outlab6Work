@@ -1,0 +1,18 @@
+<form [formGroup]="feedback" (ngSubmit)="onSubmit()">
+
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Email:
+    <input type="text" formControlName="email">
+  </label>
+
+  <label>
+    Comments:
+    <input type="text" formControlName="comments">
+  </label>
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
