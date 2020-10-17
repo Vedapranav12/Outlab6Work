@@ -1,35 +1,42 @@
+<div class="a">
 <form [formGroup]="opinion" (ngSubmit)="onSubmit()">
-
+  <br>
+  <h1 class="h1">Form</h1>
+<br>
   <label>
     Name:
-    <input type="text" formControlName="name" required>
+    <input class="inp" type="text" formControlName="name" required>
   </label>
-<br>
+<br><br>
   <label>
     Email:
-    <input type="text" formControlName="email" required>
+    <input class="inp" type="text" formControlName="email" required>
   </label>
-  <br>
+  <br><br>
   <label>
-    Feedback:
-    <input type="radio" formControlName="feedback" value="Great" required>Great
-    <input type="radio" formControlName="feedback" value="Okay">Okay
-    <input type="radio" formControlName="feedback" value="Not Good">Not Good
+    Feedback:<br><br>
+    <input class="radio" type="radio" formControlName="feedback" value="Great" required>Great<br>
+    <input class="radio" type="radio" formControlName="feedback" value="Okay">Okay<br>
+    <input class="radio" type="radio" formControlName="feedback" value="Not Good">Not Good
 </label>
-<br>
+<br><br>
   <label>
     Comments:
-    <input type="text" formControlName="comments" required>
+    <input class="inp1" type="text" formControlName="comment">
   </label>
-<button type="submit" [disabled]="!opinion.valid">Submit</button>
+  <br><br>
+<div class="but1">
+<button class="but" type="submit" [disabled]="!opinion.valid">Submit</button>
+</div>
 </form>
-<br>
+<br><br>
 <p>
   Form Value: {{ opinion.value | json }}
 </p>
 <p>
   Form Status: {{ opinion.status }}
 </p>
+<hr class="hr1">
 <app-messages></app-messages>
-
+</div>
 

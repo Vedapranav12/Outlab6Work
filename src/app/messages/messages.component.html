@@ -1,8 +1,14 @@
-<h2>Messages</h2>
+<div class="y">
+<h2 class="a1">Messages</h2>
 <div *ngIf="messageService.messages.length">
-
+<div class="but1">
   <button class="clear"
           (click)="messageService.clear()">clear</button>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
+  </div>
+  <br>
+  <div class="m" *ngFor='let message of messageService.messages'> {{message}} </div>
 
 </div>
+
+</div>
+<hr class="hr1">

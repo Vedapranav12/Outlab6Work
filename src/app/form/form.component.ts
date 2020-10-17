@@ -24,25 +24,17 @@ export class FormComponent implements OnInit {
   opinion = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', Validators.required),
-    comments: new FormControl('', Validators.required),
+    comment: new FormControl(''),
     feedback: new FormControl('', Validators.required)
   });
     onSubmit(){
     this.final = {
     name: this.opinion.controls['name'].value,
     email: this.opinion.controls['email'].value,
-    comment: this.opinion.controls['comments'].value,
+    comment: this.opinion.controls['comment'].value,
     feedback: this.opinion.controls['feedback'].value
     }
     this.formService.postInfo(this.final);
-    //this.location.back();
-    //alert(this.final.name);
-    this.opinion.setValue({
-    name: '',
-    email: '',
-    comments: '',
-    feedback: ''
-    });
   }
 
   updateInfo() {
@@ -58,7 +50,7 @@ export class FormComponent implements OnInit {
     this.opinion.setValue({
     name: this.initial.name,
     email: this.initial.email,
-    comments: this.initial.comment,
+    comment: this.initial.comment,
     feedback: this.initial.feedback
     });})
   }

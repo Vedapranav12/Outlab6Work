@@ -8,7 +8,8 @@ const routes: Routes = [
   // { path: 'detail/:id', component: HeaderComponent },
   { path: '', redirectTo: '/contact', pathMatch: 'full' },
   { path: 'form', component: FormComponent },
-  { path: 'contact', component: ContactPageComponent }
+  { path: 'contact', component: ContactPageComponent },
+  { path: "**", redirectTo: '/contact' }
 ];
 
 @NgModule({
