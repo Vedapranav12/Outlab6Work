@@ -1,18 +1,35 @@
-<form [formGroup]="feedback" (ngSubmit)="onSubmit()">
+<form [formGroup]="opinion" (ngSubmit)="onSubmit()">
 
   <label>
     Name:
-    <input type="text" formControlName="name">
+    <input type="text" formControlName="name" required>
   </label>
-
+<br>
   <label>
     Email:
-    <input type="text" formControlName="email">
+    <input type="text" formControlName="email" required>
   </label>
-
+  <br>
+  <label>
+    Feedback:
+    <input type="radio" formControlName="feedback" value="Great" required>Great
+    <input type="radio" formControlName="feedback" value="Okay">Okay
+    <input type="radio" formControlName="feedback" value="Not Good">Not Good
+</label>
+<br>
   <label>
     Comments:
-    <input type="text" formControlName="comments">
+    <input type="text" formControlName="comments" required>
   </label>
-  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+<button type="submit" [disabled]="!opinion.valid">Submit</button>
 </form>
+<br>
+<p>
+  Form Value: {{ opinion.value | json }}
+</p>
+<p>
+  Form Status: {{ opinion.status }}
+</p>
+<app-messages></app-messages>
+
+
