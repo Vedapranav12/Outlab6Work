@@ -42,7 +42,7 @@ export class FormService {
     );
   }
   private handleError(errorResponse: HttpErrorResponse) {
-    if (errorResponse instanceof ErrorEvent) {
+    if (errorResponse.error instanceof ErrorEvent) {
         alert('CLient Side Error');
     }
     else {
