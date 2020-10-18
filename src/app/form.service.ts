@@ -15,12 +15,7 @@ export class FormService {
   constructor(private http: HttpClient, private messageService: MessageService) { }
 
   getInfo(): Observable<Data> {
-    return this.http.get<Data>(this.data).
-    pipe(
-    tap(_ => {this.log('fetched data')}),
-    catchError(this.handleError)
-    //this.log('error while fetching data')
-    );
+    return this.http.get<Data>(this.data);
 
   }
   httpOptions = {
@@ -41,7 +36,7 @@ export class FormService {
     }
     );
   }
-  private handleError(errorResponse: HttpErrorResponse) {
+  handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse.error instanceof ErrorEvent) {
         alert('CLient Side Error');
     }
@@ -50,7 +45,7 @@ export class FormService {
     }
     return throwError('error');
   }
-  private log(message: string) {
+  log(message: string) {
     this.messageService.add(`${message}`);
   }
 }

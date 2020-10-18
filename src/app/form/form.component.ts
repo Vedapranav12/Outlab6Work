@@ -52,6 +52,7 @@ export class FormComponent implements OnInit {
     email: this.initial.email,
     comment: this.initial.comment,
     feedback: this.initial.feedback
-    });})
+    });this.formService.log('fetched data');},
+    (err:any) => {this.formService.handleError(err);this.formService.log('error while fetching data');})
   }
 }
