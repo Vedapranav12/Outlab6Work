@@ -31,17 +31,23 @@ export class FormService {
   postInfo(da: Data)  {
     return this.http.post<Data>(this.post, da, this.httpOptions).subscribe(
     (dat: Data) => {
+        alert('submitted successfully');
         this.log('posted successfully');
         console.log(dat);
     },
     (err: any) => {
-        this.log('error while posting');
         this.handleError(err);
+        this.log('error while posting');
     }
     );
   }
   private handleError(errorResponse: HttpErrorResponse) {
-    alert('error');
+    if (errorResponse instanceof ErrorEvent) {
+        alert('CLient Side Error');
+    }
+    else {
+        alert('Server Side Error');
+    }
     return throwError('error');
   }
   private log(message: string) {
